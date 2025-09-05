@@ -1,0 +1,160 @@
+:root {
+    --main-color: #309383
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* Start Setting Box */
+.setting-box {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    z-index: 1000;
+    height: 100vh;
+    width: 200px;
+    background-color: #ffffff82;
+    transition: 0.3s;
+}
+.setting-box.open {
+    left: 0;
+}
+.setting-box .togle-gear{
+    position: absolute;
+    top: 100px;
+    right: -32px;
+    background-color: #ffffff82;
+    cursor: pointer;
+    text-align: center;
+}
+.setting-box .togle-gear .fa-gear {
+    padding: 8px;
+}
+.setting-box .colors{
+    padding: 20px;
+    background-color: #EEE;
+    margin: 10px;
+    text-align: center;
+}
+.setting-box .colors h3{
+    margin: 0;
+    font-weight: 600;
+}
+.setting-box .colors .color-list{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+.setting-box .colors .color-list li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.1;
+    display: inline-block;
+    transition: 0.3s;
+    border: 3px solid transparent;
+}
+.setting-box .colors .color-list .active{
+    border-color: white;
+    opacity: 1;
+}
+.setting-box .colors .color-list li:first-child{
+    background-color: #309383;
+}
+.setting-box .colors .color-list li:nth-child(2){
+    background-color: #fa8072;
+}
+.setting-box .colors .color-list li:nth-child(3){
+    background-color: #6495ed;
+}
+.setting-box .colors .color-list li:nth-child(4){
+    background-color: #ffd700;
+}
+.setting-box .colors .color-list li:nth-child(5){
+    background-color: #800080;
+}
+/* End Setting Box */
+
+/* Start Landing Page */
+.langing-page {
+    min-height: 100vh;
+    background-image: url('../imgs/Landing/1landing.png');
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    position: relative;
+    transition: 1s;
+}
+
+.langing-page .overlay{
+    background-color: rgba(0, 0, 0, 0.588);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header {
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+
+.header .logo {
+    padding: 15px;
+    width: 300px;
+}
+
+.header .links {
+    width: 100%;
+    list-style: none;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.header .links li {
+    display: inline-block;
+    margin-left: 10px;
+}
+.header .links li a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.header .links li .active,
+.header .links li a:hover{
+    color: var(--main-color);
+}
+
+.langing-page .intro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.langing-page .intro h1 {
+    margin: 0 0 20px;
+}
+.langing-page .intro h1 span{
+    color: var(--main-color);
+    font-size: 40px;
+    transition: 0.3s;
+}
+.langing-page .intro p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+/* End Landing Page */
