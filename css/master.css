@@ -98,7 +98,7 @@ body {
 /* End Setting Box */
 
 /* Start Landing Page */
-.langing-page {
+.landing-page {
     min-height: 100vh;
     background-image: url('../imgs/Landing/1landing.png');
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@ body {
     transition: 1s;
 }
 
-.langing-page .overlay{
+.landing-page .overlay{
     background-color: rgba(0, 0, 0, 0.588);
     position: absolute;
     z-index: 1;
@@ -153,7 +153,7 @@ body {
     color: var(--main-color);
 }
 
-.langing-page .intro{
+.landing-page .intro{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -163,15 +163,15 @@ body {
     text-align: center;
 }
 
-.langing-page .intro h1 {
+.landing-page .intro h1 {
     margin: 0 0 20px;
 }
-.langing-page .intro h1 span{
+.landing-page .intro h1 span{
     color: var(--main-color);
     font-size: 40px;
     transition: 0.3s;
 }
-.langing-page .intro p {
+.landing-page .intro p {
     font-size: 20px;
     line-height: 1.8;
 }

@@ -99,14 +99,15 @@ randomBackGround.forEach(span => {
 
 
 // Select Landing Page
-let ladingPage = document.querySelector(".langing-page");
+let ladingPage = document.querySelector(".landing-page");
 // Get Array Od Imags
 let imgsArray = ["1landing.png" , "2landing.png" , "3landing.png" , "4landing.png" , "5landing.png"];
 // Function to Random Back Ground
 function randomImg(){
     // Change Background Image Url
+    // clearInterval(backGrondInterval);
     if(IsRandom){
-        let randomNumber = 0;
+        let randomNumber = 1;
         backGrondInterval = setInterval(() => {
             console.log(randomNumber);
             ladingPage.style.backgroundImage = 'url("imgs/Landing/'+ imgsArray[randomNumber] +'")';
@@ -114,7 +115,7 @@ function randomImg(){
             if(randomNumber > 4){
                 randomNumber=0;
             }
-        }, 1000)
+        }, 3000)
     }
 }
 randomImg();
