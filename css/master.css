@@ -32,23 +32,23 @@ body {
 .setting-box .togle-gear .fa-gear {
     padding: 8px;
 }
-.setting-box .colors{
+.setting-box .option-box{
     padding: 20px;
     background-color: #EEE;
     margin: 10px;
     text-align: center;
 }
-.setting-box .colors h3{
+.setting-box .option-box h3{
     margin: 0;
     font-weight: 600;
 }
-.setting-box .colors .color-list{
+.setting-box .option-box .color-list{
     list-style: none;
     text-align: center;
     padding: 0;
     margin: 15px 0 0 0;
 }
-.setting-box .colors .color-list li{
+.setting-box .option-box .color-list li{
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -58,24 +58,42 @@ body {
     transition: 0.3s;
     border: 3px solid transparent;
 }
-.setting-box .colors .color-list .active{
+.setting-box .option-box .color-list .active{
     border-color: white;
     opacity: 1;
 }
-.setting-box .colors .color-list li:first-child{
+.setting-box .option-box .color-list li:first-child{
     background-color: #309383;
 }
-.setting-box .colors .color-list li:nth-child(2){
+.setting-box .option-box .color-list li:nth-child(2){
     background-color: #fa8072;
 }
-.setting-box .colors .color-list li:nth-child(3){
+.setting-box .option-box .color-list li:nth-child(3){
     background-color: #6495ed;
 }
-.setting-box .colors .color-list li:nth-child(4){
-    background-color: #ffd700;
+.setting-box .option-box .color-list li:nth-child(4){
+    background-color: #ff0000;
 }
-.setting-box .colors .color-list li:nth-child(5){
+.setting-box .option-box .color-list li:nth-child(5){
     background-color: #800080;
+}
+
+.setting-box .option-box .random-background .yes,
+.setting-box .option-box .random-background .no{
+    color: white;
+    background-color: var(--main-color);
+    padding: 5px;
+    display: inline-block;
+    margin-top: 15px;
+    width: 60px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.setting-box .option-box .random-background span.active{
+    opacity: 1;
 }
 /* End Setting Box */
 
