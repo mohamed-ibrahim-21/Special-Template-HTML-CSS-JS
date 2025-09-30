@@ -109,7 +109,7 @@ function randomImg(){
     if(IsRandom){
         let randomNumber = 1;
         backGrondInterval = setInterval(() => {
-            console.log(randomNumber);
+            // console.log(randomNumber);
             ladingPage.style.backgroundImage = 'url("imgs/Landing/'+ imgsArray[randomNumber] +'")';
             randomNumber++;
             if(randomNumber > 4){
@@ -119,3 +119,37 @@ function randomImg(){
     }
 }
 randomImg();
+
+
+// make progress apper in scroll
+let ourskills = document.querySelector(".skills");
+
+window.onscroll = function() {
+
+    // Skills offset top
+    let skilloffsettop = ourskills.offsetTop;
+
+    // Skill Outer Height
+    let skillouterheight = ourskills.offsetHeight;
+    
+    // window Height
+    let windowhight = this.innerHeight;
+    
+    // window scrolltop
+    let windowscrolltop = this.pageYOffset;
+
+    // console.log(skilloffsettop);
+    // console.log(skillouterheight);
+    // console.log(windowhight);
+    // console.log(windowscrolltop);
+    if (windowscrolltop > (skilloffsettop + skillouterheight - windowhight)){
+        console.log("here");
+        let allskills = document.querySelectorAll(".skill-box .skill-prog span");
+
+        allskills.forEach(skill => {
+            skill.style.width = skill.dataset.prog;
+        });
+
+    }
+
+};
