@@ -153,3 +153,67 @@ window.onscroll = function() {
     }
 
 };
+
+// Creat Popup With Image 
+let galleryImgs = document.querySelectorAll(".img-box img");
+
+galleryImgs.forEach(img => {
+
+    img.addEventListener('click' , (e)=> {
+        // Create Overlay Element(div) 
+        let overlay = document.createElement("div");
+        // Add Class To this Element(div)
+        overlay.className = 'popup-overlay';
+        // Append Overlay To The Body (Add Div To Body)
+        document.body.appendChild(overlay);
+
+
+        // Create The Popup Box
+        let popupBox = document.createElement("div");
+        // Add Class To Popup Box
+        popupBox.className = 'popup-box';
+
+        if(img.alt !== null){
+            // Create Heading
+            let imgHeading = document.createElement("h3");
+            // Create Text For Heading
+            let imgText = document.createTextNode(img.alt);
+            // Append Text To Heading
+            imgHeading.appendChild(imgText);
+            // Append Heading To Popup Box
+            popupBox.appendChild(imgHeading);
+        }
+
+        //create The Img In Popup
+        let popupImg = document.createElement("img");
+        // Set Img Src 
+        popupImg.src = img.src;
+        // Add Img To Popup Box 
+        popupBox.appendChild(popupImg);
+        // Add Popup Box To Body
+        document.body.appendChild(popupBox);
+
+
+        // Create Close Span
+        let closeButton = document.createElement("span");
+        // Create Close Button Text
+        let closeButtonText = document.createTextNode("X");
+        // Add closeButtonText to closeButton Span
+        closeButton.appendChild(closeButtonText);
+        // Give closeButton Span Class
+        closeButton.className = 'close-button';
+        // Append closeButton To popupBox
+        popupBox.appendChild(closeButton);
+
+    });
+});
+
+//Close Popup
+document.addEventListener("click", e=>{
+    if(e.target.className === 'close-button'){
+        // Remove The Current Popup
+        e.target.parentNode.remove();
+        // Remove The Overlay (another way to remove)
+        document.querySelector(".popup-overlay").remove();
+    }
+});
