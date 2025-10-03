@@ -338,15 +338,96 @@ body {
 }
 .timeline .timeline-content {
     position: relative;
+    overflow: hidden;
 }
 .timeline .timeline-content::before{
     content: '';
+    width: 3px;
     height: 100%;
-    width: 5px;
-    position: absolute;
-    top: 0;
-    left: 50%;
     background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+.timeline .timeline-content .year {
+    margin: 20px auto;
+    background-color: var(--main-color);
+    color: white;
+    width: 50px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 3px 5px;
+    font-weight: bold;
+}
+.timeline .timeline-content .left,
+.timeline .timeline-content .right{
+    background-color: white;
+    padding: 20px;
+    width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline .timeline-content .left {
+    float: left;
+}
+.timeline .timeline-content .right {
+    float: right;
+}
+.timeline .timeline-content h3 {
+    color: var(--main-color);
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.timeline .timeline-content p{
+    line-height: 1.6;
+    margin: 0;
+    color: #666;
+}
+
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    width: 0;
+    height: 0;
+}
+.timeline .timeline-content .left::before {
+    border-color: transparent transparent transparent white;
+    top: 20px;
+    right: -19px;
+}
+.timeline .timeline-content .right::before {
+    border-color: transparent white transparent transparent;
+    top: 20px;
+    left: -19px;
+}
+
+.timeline .timeline-content .left::after,
+.timeline .timeline-content .right::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+}
+.timeline .timeline-content .left::after{
+    top: 20px;
+    right: -35px;
+}
+.timeline .timeline-content .right::after {
+    top: 20px;
+    left: -35px;
+}
+
+.clearfix{
+    clear: both;
 }
 /* End Timeline */
 
@@ -375,6 +456,18 @@ body {
     font-size: 25px;
     font-weight: bold;
     margin: 15px 0 40px;
+    position: relative;
+}
+.our-features .fet-box h4::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .our-features .fet-box p {
     width: 80%;
