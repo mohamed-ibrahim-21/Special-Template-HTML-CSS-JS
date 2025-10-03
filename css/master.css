@@ -329,3 +329,57 @@ body {
     cursor: pointer;
 }
 /* End Our Gallery */
+
+/* Start Timeline */
+.timeline {
+    background-color: #EEE;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.timeline .timeline-content {
+    position: relative;
+}
+.timeline .timeline-content::before{
+    content: '';
+    height: 100%;
+    width: 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: var(--main-color);
+}
+/* End Timeline */
+
+/* StartOur Features */
+.our-features {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.our-features h3{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 50px;
+    color: var(--main-color);
+    font-size: 30px;
+}
+.our-features .fet-box {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin: 0 0 40px;
+}
+.our-features .fet-box img {
+    width: 100px;
+}
+.our-features .fet-box h4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 0 40px;
+}
+.our-features .fet-box p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #706f6f;
+}
+/* En Our Features */
