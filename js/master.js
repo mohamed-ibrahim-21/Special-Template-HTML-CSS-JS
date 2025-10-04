@@ -283,3 +283,27 @@ document.querySelector(".reset-button").onclick = function(){
     localStorage.removeItem("color_option");
     window.location.reload(); // Relode Page
 };
+
+// Toggle Menu 
+let togglebtn = document.querySelector(".toggle");
+let tlinks = document.querySelector(".links");
+
+// Stop Propagation On Menu
+tlinks.onclick = function(e) {
+    e.stopPropagation();
+};
+
+togglebtn.onclick = function() {
+    this.classList.toggle("menu-active");
+    tlinks.classList.toggle("open");
+}
+
+// Click AnyWhere OutSide Menu And Toggle Button To Close Menu
+document.addEventListener("click", (e) => {
+    
+    if (e.target !== togglebtn && e.target !== tlinks) {
+        togglebtn.classList.remove("menu-active");
+        tlinks.classList.remove("open");
+    }
+});
+

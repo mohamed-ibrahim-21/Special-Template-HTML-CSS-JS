@@ -9,7 +9,7 @@ body {
 }
 .container {
     padding: 0px 15px 0px 15px;
-    width: 1170px;
+    /* width: 1170px; */
     margin: auto;
 }
 /* Start Setting Box */
@@ -189,7 +189,10 @@ body {
     top: 0;
     left: 0;
 }
-
+.landing-page .container {
+    position: relative;
+    z-index: 1000;
+}
 .header {
     position: relative;
     z-index: 2;
@@ -203,12 +206,31 @@ body {
     width: 300px;
 }
 
+.header .links-container {
+    text-align: right;
+    width: 100%;
+}
+
+.header .links-container .toggle {
+    display: none;
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.header .links-container .toggle.menu-active::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent white transparent;
+    bottom: -15px;
+    right: 3px;
+}
 .header .links {
     width: 100%;
     list-style: none;
-    text-align: right;
     padding-left: 0;
-    padding-right: 20px;
     font-size: 15px;
     font-weight: bold;
 }
@@ -239,6 +261,7 @@ body {
 .landing-page .intro h1 {
     margin: 0 0 20px;
 }
+
 .landing-page .intro h1 span{
     color: var(--main-color);
     font-size: 40px;
@@ -247,6 +270,48 @@ body {
 .landing-page .intro p {
     font-size: 20px;
     line-height: 1.8;
+}
+@media (max-width: 575px) {
+    .landing-page .intro{
+        width: 85%;
+        
+    }
+    .landing-page .intro h1{
+        font-size: 25px;
+    }
+    .landing-page .intro h1 span{
+        font-size: 25px;
+    }
+    .landing-page .intro p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header .links {
+        display: none;
+    }
+    .header .links-container .toggle {
+        display: block;
+    }
+    .header .links.open{
+        display: block;
+        background-color: white;
+        position: absolute;
+        padding: 10px;
+        width: 100%;
+        left: 0;
+        top: 50px;
+        border-radius: 5px;
+        text-align: left;
+    }
+    .header .links li {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .header .links li a {
+        color: var(--main-color);
+    }
 }
 /* End Landing Page */
 
@@ -277,6 +342,16 @@ body {
 }
 .about-us .about-img img{
     width: 300px;
+}
+
+@media (max-width: 767px) {
+    .about-us .about-img img{
+        width: 200px;
+    }
+    .about-us {
+        display: block;
+        text-align: center;
+    }
 }
 /* End About Us */
 
@@ -321,6 +396,15 @@ body {
     left: 0;
     top: 0;
     transition: all 0.3s;
+}
+@media (max-width: 767px) {
+    .skills .skill-box {
+        display: block;
+    }
+    .skills .skill-box .skill-name{
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 /* End skills */
 
@@ -497,6 +581,19 @@ body {
 .clearfix{
     clear: both;
 }
+
+@media (max-width: 767px) {
+    .timeline .timeline-content .left::before,
+    .timeline .timeline-content .right::before,
+    .timeline .timeline-content .left::after,
+    .timeline .timeline-content .right::after {
+        display: none;
+    }
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: 100%;
+    }
+}
 /* End Timeline */
 
 /* StartOur Features */
@@ -543,6 +640,25 @@ body {
     line-height: 1.7;
     color: #706f6f;
 }
+@media (max-width: 991px) {
+    .our-features .fet-box {
+        width: calc(100% / 2);
+    }
+    .our-features .fet-box img {
+        width: 75PX;
+    }
+    .our-features .fet-box h4 {
+        font-size: 20px;
+    }
+    .our-features .fet-box p {
+        font-size: 15px;
+    }
+}
+@media (max-width: 575px){
+    .our-features .fet-box {
+        width: 100%;
+    }
+}
 /* End Our Features */
 
 /* Start Our Testimonials */
@@ -557,7 +673,6 @@ body {
     position: absolute;
     z-index: -1;
     top: 0;
-    
     width: 50%;
     height: 100%;
 }
@@ -601,6 +716,17 @@ body {
 }
 .testimonials .ts-box .person-work {
     margin: 0;
+}
+
+@media (max-width: 767px){
+    .testimonials .ts-box {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    } 
+    .testimonials h2 {
+        text-align: center;
+    }
 }
 /* End Our Testimonials */
 
@@ -685,4 +811,46 @@ body {
     opacity: 0;
     transition: 0.3s;
 }
+@media (max-width: 767px){
+    .contact-us .left {
+        width: 100%;
+    }
+    .contact-us .right {
+        width: 100%;
+    }
+}
 /* End Our Contact Us */
+
+/* Start Footer */
+.footer{
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+/* End Footer */
+
+
+/* Start Grid System */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 800px;
+    }
+}
+@media (min-width: 992) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+/* End Grid System */
