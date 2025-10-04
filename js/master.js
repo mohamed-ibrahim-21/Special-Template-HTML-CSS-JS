@@ -38,13 +38,7 @@ colorLi.forEach(li => {
         document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
         localStorage.setItem("color_option", e.target.dataset.color);
 
-        // Remove Active From All Childrens
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active");
-        });
-
-        // Add Active On Clicked Li
-        e.target.classList.add("active");
+        handelActive(e);
     });
 });
 
@@ -76,13 +70,7 @@ randomBackGround.forEach(span => {
 
     // Click On Every Span Make Some Thing
     span.addEventListener("click", (e) => {
-        // Remove Active From All Childrens
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-            element.classList.remove("active");
-        });
-
-        // Add Active On Clicked span
-        e.target.classList.add("active");
+        handelActive(e);
 
         if(e.target.dataset.background === 'yes'){
             IsRandom = true;
@@ -143,7 +131,7 @@ window.onscroll = function() {
     // console.log(windowhight);
     // console.log(windowscrolltop);
     if (windowscrolltop > (skilloffsettop + skillouterheight - windowhight)){
-        console.log("here");
+        // console.log("here");
         let allskills = document.querySelectorAll(".skill-box .skill-prog span");
 
         allskills.forEach(skill => {
@@ -204,7 +192,6 @@ galleryImgs.forEach(img => {
         closeButton.className = 'close-button';
         // Append closeButton To popupBox
         popupBox.appendChild(closeButton);
-
     });
 });
 
@@ -217,3 +204,33 @@ document.addEventListener("click", e=>{
         document.querySelector(".popup-overlay").remove();
     }
 });
+
+
+// Select All Bullets 
+const allBullets = document.querySelectorAll(".nav-bullets .bullets");
+// Select All links 
+const allLinks = document.querySelectorAll(".links a");
+// Scroll To Section
+function scrollToSection(element){
+    element.forEach(ele => {
+        ele.addEventListener("click", (e)=> {
+            e.preventDefault();
+            const section = e.target.dataset.section;
+            document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+};
+
+scrollToSection(allBullets);
+scrollToSection(allLinks);
+
+// Function To Handel Active
+function handelActive(ev){
+    // Remove Active From All Childrens
+        ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+            element.classList.remove("active");
+        });
+
+        // Add Active On Clicked Li
+        ev.target.classList.add("active");
+}
