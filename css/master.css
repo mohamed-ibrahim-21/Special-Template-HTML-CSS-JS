@@ -38,6 +38,10 @@ body {
 .setting-box .togle-gear .fa-gear {
     padding: 8px;
 }
+.setting-box .togle-gear .fa-gear:hover {
+    transition: 0.3s;
+    opacity: 0.5;
+}
 .setting-box .option-box{
     padding: 20px;
     background-color: #EEE;
@@ -66,6 +70,10 @@ body {
     display: inline-block;
     transition: 0.3s;
     border: 3px solid transparent;
+}
+.setting-box .option-box .color-list li:hover{
+    transition: 0.5s;
+    opacity: 1;
 }
 .setting-box .option-box .color-list .active{
     border-color: white;
@@ -431,7 +439,10 @@ body {
     border-radius: 5px;
     margin: 5px;
 }
-
+.gallery .img-box img:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
 .popup-overlay {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.3);
