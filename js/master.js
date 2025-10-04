@@ -234,3 +234,38 @@ function handelActive(ev){
         // Add Active On Clicked Li
         ev.target.classList.add("active");
 }
+
+let bulletsSpan = document.querySelectorAll(".Show-Bullets span");
+let bulletsContainer = document.querySelector(".nav-bullets");
+let bulletsLocalStorage = localStorage.getItem("bullets_option");
+
+if (bulletsLocalStorage !== null) {
+    bulletsSpan.forEach( span => {
+        span.classList.remove("active");
+    });
+    
+    if(bulletsLocalStorage === "block"){
+        bulletsContainer.style.display = 'block';
+        document.querySelector(".Show-Bullets .yes").classList.add("active");
+    }
+    else {
+        bulletsContainer.style.display = 'none';
+        document.querySelector(".Show-Bullets .no").classList.add("active");
+    }
+}
+
+bulletsSpan.forEach(span => {
+    
+    span.addEventListener("click", (e) => {
+        if(span.dataset.bullets === 'show'){
+            bulletsContainer.style.display = 'block';
+            localStorage.setItem("bullets_option", 'block');
+        }
+        else{
+            bulletsContainer.style.display = 'none';
+            localStorage.setItem("bullets_option", 'none');
+        }
+        handelActive(e);
+    });
+
+});
