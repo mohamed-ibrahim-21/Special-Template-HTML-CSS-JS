@@ -46,7 +46,8 @@ body {
 }
 .setting-box .option-box h3{
     margin: 0;
-    font-weight: 600;
+    color: #666;
+    font-size: 17px;
 }
 .setting-box .option-box .color-list{
     list-style: none;
