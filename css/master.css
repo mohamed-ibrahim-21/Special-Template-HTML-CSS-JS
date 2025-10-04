@@ -43,6 +43,8 @@ body {
     background-color: #EEE;
     margin: 10px;
     text-align: center;
+    width: 180px;
+    border-radius: 5px;
 }
 .setting-box .option-box h3{
     margin: 0;
@@ -101,6 +103,22 @@ body {
 }
 .setting-box .option-box span.active{
     opacity: 1;
+}
+.setting-box .reset-button {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    width: 180px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.setting-box .reset-button:hover {
+    opacity: 0.5;
 }
 /* End Setting Box */
 

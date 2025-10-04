@@ -53,6 +53,10 @@ let backGrondInterval;
 let backgrounLocalItem = localStorage.getItem("background_item");
 
 if(backgrounLocalItem !== null) {
+    randomBackGround.forEach( span => {
+        span.classList.remove("active");
+    });
+    
     if(backgrounLocalItem === "yes"){
         IsRandom = true;
         document.querySelector(".random-background .yes").classList.add("active");
@@ -71,7 +75,6 @@ randomBackGround.forEach(span => {
     // Click On Every Span Make Some Thing
     span.addEventListener("click", (e) => {
         handelActive(e);
-
         if(e.target.dataset.background === 'yes'){
             IsRandom = true;
             randomImg();
@@ -82,6 +85,7 @@ randomBackGround.forEach(span => {
             clearInterval(backGrondInterval);
             localStorage.setItem("background_item" , "no");
         }
+        
     });
 });
 
@@ -269,3 +273,13 @@ bulletsSpan.forEach(span => {
     });
 
 });
+
+// Reset Button 
+document.querySelector(".reset-button").onclick = function(){
+
+    // localStorage.clear(); //Clear All Local Storage
+    localStorage.removeItem("background_item");
+    localStorage.removeItem("bullets_option");
+    localStorage.removeItem("color_option");
+    window.location.reload(); // Relode Page
+};
